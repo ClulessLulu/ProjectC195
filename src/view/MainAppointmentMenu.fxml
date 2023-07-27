@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="445.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainAppointment">
+    <children>
+        <AnchorPane layoutX="31.0" layoutY="85.0" prefHeight="340.0" prefWidth="1196.0">
+            <children>
+                <HBox alignment="BOTTOM_RIGHT" layoutX="-4.0" layoutY="-17.0" prefHeight="35.0" prefWidth="1188.0" spacing="75.0">
+                    <children>
+                        <RadioButton mnemonicParsing="false" onAction="#onActionViewWeek" prefHeight="17.0" prefWidth="118.0" text="View by Week">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="viewTG" />
+                            </toggleGroup>
+                        </RadioButton>
+                        <RadioButton mnemonicParsing="false" onAction="#OnActionViewMonth" prefHeight="17.0" prefWidth="135.0" text="View by Month" toggleGroup="$viewTG" />
+                        <RadioButton mnemonicParsing="false" onAction="#onActionViewAll" prefHeight="17.0" prefWidth="104.0" selected="true" text="View All" toggleGroup="$viewTG" />
+                        <Button mnemonicParsing="false" onAction="#onActionCx" prefHeight="25.0" prefWidth="125.0" text="Customers" />
+                        <Button mnemonicParsing="false" onAction="#onActionReports" prefHeight="25.0" prefWidth="125.0" text="Reports" />
+                        <DatePicker fx:id="datePicker" onAction="#onActionSearchDate" opacity="0.73" prefHeight="25.0" prefWidth="195.0" promptText="Search by Date" />
+                    </children>
+                </HBox>
+                <TableView fx:id="appTableView" layoutX="2.0" layoutY="29.0" prefHeight="240.0" prefWidth="1188.0">
+                    <columns>
+                        <TableColumn fx:id="appIdCol" prefWidth="60.0" text="ID" />
+                        <TableColumn fx:id="appTitleCol" prefWidth="100.0" text="Title" />
+                        <TableColumn fx:id="appDescriptionCol" prefWidth="115.0" text="Description" />
+                        <TableColumn fx:id="appLocationCol" minWidth="0.0" prefWidth="90.0" text="Location" />
+                        <TableColumn fx:id="appContactCol" prefWidth="160.0" text="Contact" />
+                        <TableColumn fx:id="appTypeCol" prefWidth="125.0" text="Type" />
+                        <TableColumn fx:id="appStartDateCol" prefWidth="100.0" text="Start Date" />
+                        <TableColumn fx:id="appEndDateCol" prefWidth="100.0" text="End Date" />
+                        <TableColumn fx:id="appStartTimeCol" prefWidth="95.0" text="Start Time" />
+                        <TableColumn fx:id="appEndTimeCol" prefWidth="95.0" text="End Time" />
+                        <TableColumn fx:id="appCxIdCol" prefWidth="93.0" text="Customer ID" />
+                        <TableColumn fx:id="appUserIdCol" prefWidth="53.0" text="User ID" />
+                    </columns>
+                </TableView>
+                <Button layoutX="1065.0" layoutY="293.0" mnemonicParsing="false" onAction="#onActionLogout" prefHeight="25.0" prefWidth="125.0" text="Logout" />
+                <Button layoutX="1.0" layoutY="295.0" mnemonicParsing="false" onAction="#onActionAddApp" prefHeight="25.0" prefWidth="125.0" text="Add" />
+                <Button layoutX="150.0" layoutY="295.0" mnemonicParsing="false" onAction="#onActionModApp" prefHeight="25.0" prefWidth="125.0" text="Modify" />
+                <Button layoutX="300.0" layoutY="295.0" mnemonicParsing="false" onAction="#onActionDelApp" prefHeight="25.0" prefWidth="125.0" text="Delete" />
+            </children>
+        </AnchorPane>
+        <Label layoutX="34.0" layoutY="34.0" prefHeight="36.0" prefWidth="282.0" text="Appointment Records">
+            <font>
+                <Font name="System Bold" size="25.0" />
+            </font>
+        </Label>
+      <Label fx:id="errorLbl" layoutX="337.0" layoutY="37.0" prefHeight="25.0" prefWidth="474.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

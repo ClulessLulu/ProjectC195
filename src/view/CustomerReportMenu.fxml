@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="445.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerReport">
+   <children>
+      <AnchorPane layoutX="31.0" layoutY="85.0" minHeight="0.0" minWidth="0.0" prefHeight="340.0" prefWidth="1196.0">
+         <children>
+            <TableView fx:id="cxTable" layoutX="2.0" layoutY="29.0" prefHeight="240.0" prefWidth="1188.0">
+               <columns>
+                  <TableColumn fx:id="cxIdCol" prefWidth="91.0" text="Customer ID" />
+                  <TableColumn fx:id="cxNameCol" prefWidth="257.0" text="Customer Name" />
+                  <TableColumn fx:id="cxAddressCol" prefWidth="360.0" text="Address" />
+                  <TableColumn fx:id="cxCodeCol" prefWidth="124.0" text="Postal Code" />
+                  <TableColumn fx:id="cxPhoneCol" prefWidth="214.0" text="Phone Number" />
+                  <TableColumn fx:id="cxCountryCol" prefWidth="141.0" text="Country" />
+               </columns>
+            </TableView>
+            <HBox alignment="BOTTOM_RIGHT" layoutX="880.0" layoutY="-17.0" prefHeight="35.0" prefWidth="304.0" spacing="10.0">
+               <children>
+                  <Label text="Country:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="countryCombo" onAction="#onActionCountryCombo" prefWidth="150.0" promptText="Select a Country" />
+               </children>
+            </HBox>
+            <Button layoutX="1065.0" layoutY="293.0" mnemonicParsing="false" onAction="#onActionLogout" prefHeight="25.0" prefWidth="125.0" text="Logout" />
+            <HBox alignment="BOTTOM_LEFT" layoutX="2.0" layoutY="-17.0" prefHeight="34.0" prefWidth="900.0" spacing="55.0">
+               <children>
+                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onActionContact" prefHeight="25.0" prefWidth="125.0" text="Contact Schedule" />
+                  <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="19.0" mnemonicParsing="false" onAction="#onActionTotalApp" prefHeight="25.0" prefWidth="125.0" text="Total Appointments" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <Label alignment="TOP_CENTER" layoutX="34.0" layoutY="34.0" prefHeight="36.0" prefWidth="354.0" text="Customers by Country Report">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Button alignment="CENTER" layoutX="907.0" layoutY="40.0" mnemonicParsing="false" onAction="#onActionAppMenu" prefHeight="25.0" prefWidth="125.0" text="Appointment" />
+      <Button alignment="CENTER" layoutX="1088.0" layoutY="40.0" mnemonicParsing="false" onAction="#onActionCxMenu" prefHeight="25.0" prefWidth="125.0" text="Customers" />
+   </children>
+</AnchorPane>
